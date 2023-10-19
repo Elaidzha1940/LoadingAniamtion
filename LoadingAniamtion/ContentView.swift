@@ -28,10 +28,24 @@ struct ContentView: View {
                     Circle()
                         .frame(width: 50, height: 50)
                         .offset(x: start ? -50 : 50)
-
                 }
+            
+            Circle()
+                .stroke(lineWidth: 3)
+                .frame(width: 50, height: 50)
+                .offset(x: start ? -50 : 50)
         }
+        .frame(width: 250, height: 150)
         .preferredColorScheme(.dark)
+        .background(
+            Color.black,
+            in: RoundedRectangle(cornerRadius: 10))
+        .shadow(color: .black.opacity(0.1), radius: 10)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                <#code#>
+            }
+        }
     }
 }
 
