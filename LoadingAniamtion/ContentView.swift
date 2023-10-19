@@ -36,11 +36,10 @@ struct ContentView: View {
                 .offset(x: start ? -70 : 70)
         }
         .frame(width: 250, height: 150)
-        .preferredColorScheme(.dark)
         .background(
             Color.black,
             in: RoundedRectangle(cornerRadius: 10))
-        .shadow(color: .clear.opacity(0.1), radius: 10)
+        .shadow(color: .brown.opacity(0.5), radius: 20, x: 10, y: 10)
         .onAppear {
             withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                 start = true
@@ -51,4 +50,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }
